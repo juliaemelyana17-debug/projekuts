@@ -1,7 +1,13 @@
 <?php
-echo "<h2>--POLGAN MART--</h2>";
+// Commit 6
+$beli = [];
+$jumlah = [];
+$total = [];
+$grandtotal = 0;
 
-$kode_barang = ["BRG01", "BRG02", "BRG03", "BRG04", "BRG05"];
-$nama_barang = ["Pensil", "Buku", "Penghapus", "Pulpen", "Spidol"];
-$harga_barang = [2000, 5000, 1500, 3000, 4000];
+// loop 5x sesuai jumlah produk
+for ($i = 0; $i < 5; $i++) {
+    $beli[$i] = rand(0, 4); // index barang acak
+    $jumlah[$i] = rand(1, 5); // jumlah beli 1–5
+}
 ?>
