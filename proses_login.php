@@ -1,21 +1,16 @@
 <?php
 session_start();
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$valid_user = "admin";
+$valid_pass = "1234";
 
-// Data login statis
-$validUser = "admin";
-$validPass = "1234";
+$user = $_POST['username'];
+$pass = $_POST['password'];
 
-// Cek kecocokan
-if ($username === $validUser && $password === $validPass) {
-    $_SESSION['username'] = $username;
-    $_SESSION['role'] = "Dosen";
-
+if($user == $valid_user && $pass == $valid_pass){
+    $_SESSION['username'] = $user;
     header("Location: dashboard.php");
-    exit;
 } else {
     header("Location: index.php?error=1");
-    exit;
 }
+?>
