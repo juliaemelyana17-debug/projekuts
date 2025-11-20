@@ -1,13 +1,26 @@
 <?php
-// Commit 6
-$beli = [];
-$jumlah = [];
-$total = [];
-$grandtotal = 0;
+// Commit 7
+echo "<table border='1' cellpadding='8'>";
+echo "<tr>
+        <th>Kode</th>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+      </tr>";
 
-// loop 5x sesuai jumlah produk
-for ($i = 0; $i < 5; $i++) {
-    $beli[$i] = rand(0, 4); // index barang acak
-    $jumlah[$i] = rand(1, 5); // jumlah beli 1–5
+foreach ($beli as $i => $item) {
+    $total[$i] = $harga_barang[$item] * $jumlah[$i];
+    $grandtotal += $total[$i];
+
+    echo "<tr>
+            <td>" . $kode_barang[$item] . "</td>
+            <td>" . $nama_barang[$item] . "</td>
+            <td>Rp " . $harga_barang[$item] . "</td>
+            <td>" . $jumlah[$i] . "</td>
+            <td>Rp " . $total[$i] . "</td>
+          </tr>";
 }
+
+echo "</table>";
 ?>
